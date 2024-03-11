@@ -30,3 +30,35 @@ class LinkedList:
 
     def menghitung_total(self):
         harga_total = 0
+current = self.head
+        while current:
+            harga_total += current.harga
+            current = current.next
+        return harga_total
+
+menu_miexue = {
+    "Miexue Ice Cream": 5000,
+    "Boba Shake": 16000,
+    "Mi Sundae": 14000,
+    "Mi Ganas": 11000,
+    "Creamy Mango Boba": 22000,
+}
+
+print("======================================")
+print('      Selamat Datang Di D4 MIE      ')
+print("======================================")
+
+print("""==============Miexue Menu==============
+-------------------------------------
+|No|Nama Makanan Dan Minuman |  Harga  |
+-------------------------------------
+|1 |Miexue Ice Cream         |Rp 5000  |
+|2 |Boba Shake               |Rp 16000 |
+|3 |Mi Sundae                |Rp 14000 |
+|4 |Mi Ganas                 |Rp 11000 |
+|5 |Creamy Mango Boba        |Rp 22000 |
+      """)
+
+keranjang_pesanan = LinkedList()
+
+while True:
