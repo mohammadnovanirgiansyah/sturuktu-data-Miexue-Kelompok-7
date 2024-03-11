@@ -62,3 +62,35 @@ print("""==============Miexue Menu==============
 keranjang_pesanan = LinkedList()
 
 while True:
+    print("\nMenu:")
+    print("1. Tambah pesanan ke keranjang")
+    print("2. Tampilkan pesanan yang sudah ditambahkan")
+    print("3. Jumlah Harga yang dibayarkan")
+    print("4. Selesai")
+    
+    pilihan = input("Pilih menu: ")
+
+    if pilihan == "1":
+        print("\nMenu Miexue:")
+        for menu, harga in menu_miexue.items():
+            print(f"{menu}: Rp{harga}")
+        pesanan = input("Masukkan nama menu: ")
+        if pesanan in menu_miexue:
+            keranjang_pesanan.menambahkan_pesanan(pesanan, menu_miexue[pesanan])
+            print("Menu Pesanan berhasil ditambahkan ke keranjang.")
+        else:
+            print("Menu tidak tersedia.")
+            
+    elif pilihan == "2":
+        keranjang_pesanan.menampilkan_pesanan()
+        
+    elif pilihan == "3":
+        harga_total = keranjang_pesanan.menghitung_total()
+        print(f"nominal harga yang harus dibayarkan: Rp{harga_total}")
+        
+    elif pilihan == "4":
+        print("Terima kasih Telah Memesan Menu!")
+        break
+        
+    else:
+        print("Pilihan tidak valid. Silakan pilih menu yang tersedia.")
